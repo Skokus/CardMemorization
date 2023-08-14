@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cardmemogame.component.scss']
 })
 export class CardmemogameComponent {
-  cards = [1,2,3];
+  cards = [];
 }
