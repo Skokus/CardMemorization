@@ -1,5 +1,13 @@
+<button (click)="onStartButtonClick()">Start</button>
 <button (click)="onCheckButtonClick()">Check solution</button>
-<div *ngFor="let card of cards">
-  <div>{{card}}</div>
+<div *ngIf="isOrderShown">
+  <div *ngFor="let card of actualOrder">
+    <div>{{card}}</div>
+  </div>
 </div>
-<cardinput [cards]="cards"></cardinput>
+<div *ngIf="!isOrderShown">
+  <div *ngFor="let card of cards">
+    <div>{{card}}</div>
+  </div>
+  <cardinput [cards]="cards"></cardinput>
+</div>
