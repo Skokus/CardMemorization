@@ -1,5 +1,5 @@
 <div *ngFor="let suit of suits">
   <span *ngFor="let value of values">
-    <button (click)="onClick(suit, value)">{{value}}{{suit}}</button>
+    <button (click)="onClick(suit.name, value)">{{value}}{{suit.symbol}}</button>
   </span>
 </div>
