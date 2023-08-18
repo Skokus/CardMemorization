@@ -1,5 +1,8 @@
 <div *ngFor="let suit of suits">
   <span *ngFor="let value of values">
-    <button (click)="onClick(suit.name, value)">{{value}}{{suit.symbol}}</button>
+    <button (click)="onClick(suit.name, value)">
+      <div>{{value}}</div>
+      <div [ngClass]="suit.name">{{suit.symbol}}</div>
+    </button>
   </span>
 </div>
