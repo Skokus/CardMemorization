@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardmemogameComponent } from './cardmemogame/cardmemogame.component';
 import { CardinputComponent } from './cardmemogame/cardinput/cardinput.component';
+import { CardlistComponent } from './cardmemogame/cardlist/cardlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardmemogameComponent,
-    CardinputComponent
+    CardinputComponent,
+    CardlistComponent
   ],
   imports: [
     BrowserModule,

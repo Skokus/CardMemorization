@@ -7,13 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class CardinputComponent {
   @Input() cards : string[] = [];
+
   suits = [
     { name: 'hearts', symbol: '\u2665' },
     { name: 'clubs', symbol: '\u2663' },
     { name: 'diamonds', symbol: '\u2666' },
     { name: 'spades', symbol: '\u2660' }
   ];
-  values : string[] = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
   cardNames = [
     { name: "ace", shortname: "A" },
     { name: "2", shortname: "2" },
@@ -29,6 +29,7 @@ export class CardinputComponent {
     { name: "queen", shortname: "Q" },
     { name: "king", shortname: "K" }
   ];
+  
   onClick(suit: string, value: string): void{
     this.cards.push(this.createCardName(suit, value));
   }

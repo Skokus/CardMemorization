@@ -1,13 +1,18 @@
 .cardinputbutton{
   background-color: white;
   font-size: 24px;
+  font-weight: bold;
   border-color: black;
   border-width: 2px;
   border-style: solid;
   border-radius: 8px;
-  min-height: 70px;
+  min-height: 102px;
   min-width: 70px;
   margin: 8px;
+}
+
+.cardinputsymbol{
+  font-size: 40px;
 }
 
 .hearts, .diamonds{

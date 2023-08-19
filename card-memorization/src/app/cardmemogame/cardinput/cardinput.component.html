@@ -1,7 +1,8 @@
 <div *ngFor="let suit of suits">
   <span *ngFor="let cardname of cardNames">
     <button class="cardinputbutton" (click)="onClick(suit.name, cardname.name)">
-      <div [ngClass]="suit.name">{{cardname.shortname}}{{suit.symbol}}</div>
+      <div >{{cardname.shortname}}</div>
+      <div class="cardinputsymbol" [ngClass]="suit.name">{{suit.symbol}}</div>
     </button>
   </span>
 </div>
