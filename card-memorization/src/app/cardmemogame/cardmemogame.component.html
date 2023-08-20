@@ -1,5 +1,7 @@
-<button class="funbutton" (click)="onStartButtonClick()">Start</button>
-<button class="funbutton" (click)="onCheckButtonClick()">Check solution</button>
+<div class="controlpanel">
+  <button class="funbutton" (click)="onStartButtonClick()">Start</button>
+  <button class="funbutton" (click)="onCheckButtonClick()">Check solution</button>
+</div>
 <div *ngIf="isOrderShown">
   <cardlist [cards]="actualOrder"></cardlist>
 </div>
