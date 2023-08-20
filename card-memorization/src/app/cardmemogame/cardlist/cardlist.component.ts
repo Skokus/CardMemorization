@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class CardlistComponent {
   @Input() cards : string[] = [];
+
+  getCardPath(name: string): string{
+    return "../../assets/Playing Cards/PNG-cards-1.3/" + name + ".png";
+  }
 }
