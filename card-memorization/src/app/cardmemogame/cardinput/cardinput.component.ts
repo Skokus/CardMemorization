@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import cardSuits from "../../../assets/cards.json"
 
 @Component({
   selector: 'cardinput',
@@ -7,28 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class CardinputComponent {
   @Input() cards : string[] = [];
-
-  suits = [
-    { name: 'hearts', symbol: '\u2665' },
-    { name: 'clubs', symbol: '\u2663' },
-    { name: 'diamonds', symbol: '\u2666' },
-    { name: 'spades', symbol: '\u2660' }
-  ];
-  cardNames = [
-    { name: "ace", shortname: "A" },
-    { name: "2", shortname: "2" },
-    { name: "3", shortname: "3" },
-    { name: "4", shortname: "4" },
-    { name: "5", shortname: "5" },
-    { name: "6", shortname: "6" },
-    { name: "7", shortname: "7" },
-    { name: "8", shortname: "8" },
-    { name: "9", shortname: "9" },
-    { name: "10", shortname: "10" },
-    { name: "jack", shortname: "J" },
-    { name: "queen", shortname: "Q" },
-    { name: "king", shortname: "K" }
-  ];
+  suits = cardSuits.suits;
+  values = cardSuits.values;
   
   onClick(suit: string, value: string): void{
     this.cards.push(this.createCardName(suit, value));

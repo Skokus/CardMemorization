@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import cardSuits from "../../assets/cards.json"
 
 @Component({
   selector: 'cardmemogame',
@@ -9,28 +10,6 @@ export class CardmemogameComponent {
   cards = [];
   actualOrder : string[] = [];
   isOrderShown = true;
-
-  suits = [
-    { name: 'hearts', symbol: '\u2665' },
-    { name: 'clubs', symbol: '\u2663' },
-    { name: 'diamonds', symbol: '\u2666' },
-    { name: 'spades', symbol: '\u2660' }
-  ];
-  values = [
-    { name: "ace", shortname: "A" },
-    { name: "2", shortname: "2" },
-    { name: "3", shortname: "3" },
-    { name: "4", shortname: "4" },
-    { name: "5", shortname: "5" },
-    { name: "6", shortname: "6" },
-    { name: "7", shortname: "7" },
-    { name: "8", shortname: "8" },
-    { name: "9", shortname: "9" },
-    { name: "10", shortname: "10" },
-    { name: "jack", shortname: "J" },
-    { name: "queen", shortname: "Q" },
-    { name: "king", shortname: "K" }
-  ];
 
   ngOnInit() {
     this.actualOrder = this.generateCardOrder(5);
@@ -55,9 +34,9 @@ export class CardmemogameComponent {
 
   generateCardOrder(length: number): string[]{
     const allCards : string[] = [];
-    for(let i = 0; i < this.suits.length; i++){
-      for(let j = 0; j < this.values.length; j++){
-        allCards.push(this.values[j].name + "_of_" + this.suits[i].name);
+    for(let i = 0; i < cardSuits.suits.length; i++){
+      for(let j = 0; j < cardSuits.values.length; j++){
+        allCards.push(cardSuits.values[j].name + "_of_" + cardSuits.suits[i].name);
       }
     }
     console.log(allCards);
