@@ -18,4 +18,11 @@ export class CardinputComponent {
   createCardName(suit: string, value: string): string{
     return value + "_of_" + suit;
   }
+
+  getCardNameFromId(id: number): string{
+    const suitId = Math.floor(id/13);
+    const valueId = id%13;
+    return this.createCardName(cardSuits.suits[suitId].name, cardSuits.values[valueId].name);
+  }
+
 }

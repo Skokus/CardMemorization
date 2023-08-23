@@ -7,6 +7,7 @@ import cardSuits from "../../assets/cards.json"
   styleUrls: ['./cardmemogame.component.scss']
 })
 export class CardmemogameComponent {
+
   cards = [];
   actualOrder : string[] = [];
   isOrderShown = true;
@@ -16,7 +17,13 @@ export class CardmemogameComponent {
   }
 
   onCheckButtonClick(): void{
-    console.log(this.checkTheSolution());
+    //TODO
+  }
+
+  onCardNumberSubmit(event: any) {
+    console.log("lma");
+    event.preventDefault();
+    this.actualOrder = this.generateCardOrder(event.target.cardnumber.value);
   }
 
   onStartButtonClick(): void{
@@ -39,7 +46,6 @@ export class CardmemogameComponent {
         allCards.push(cardSuits.values[j].name + "_of_" + cardSuits.suits[i].name);
       }
     }
-    console.log(allCards);
     const r : string[] = [];
     for(let i = 0; i < length; i++){
       let n = this.getRandomInt(allCards.length);

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CardmemogameComponent } from './cardmemogame/cardmemogame.component';
 import { CardinputComponent } from './cardmemogame/cardinput/cardinput.component';
 import { CardlistComponent } from './cardmemogame/cardlist/cardlist.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CardlistComponent } from './cardmemogame/cardlist/cardlist.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,9 @@
 <div class="controlpanel">
   <button class="funbutton" (click)="onStartButtonClick()">Start</button>
   <button class="funbutton" (click)="onCheckButtonClick()">Check solution</button>
+  <form (ngSubmit)="onCardNumberSubmit($event)">
+    <input type="number" id="cardnumber" name="cardNumber" min="2" max="52">
+ </form>
 </div>
 <div *ngIf="isOrderShown">
   <cardlist [cards]="actualOrder"></cardlist>
