@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import cardSuits from "../../../assets/cards.json"
+import { Card } from '../Card';
 
 @Component({
   selector: 'cardinput',
@@ -7,12 +8,12 @@ import cardSuits from "../../../assets/cards.json"
   styleUrls: ['./cardinput.component.scss']
 })
 export class CardinputComponent {
-  @Input() cards : string[] = [];
+  @Input() cards : Card[] = [];
   suits = cardSuits.suits;
   values = cardSuits.values;
   
   onClick(suit: string, value: string): void{
-    this.cards.push(this.createCardName(suit, value));
+    this.cards.push(new Card(this.createCardName(suit, value)));
   }
 
   createCardName(suit: string, value: string): string{

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import cardSuits from "../../assets/cards.json"
+import { Card, CorrectState } from './Card';
 
 @Component({
   selector: 'cardmemogame',
@@ -8,8 +9,8 @@ import cardSuits from "../../assets/cards.json"
 })
 export class CardmemogameComponent {
 
-  cards = [];
-  actualOrder : string[] = [];
+  cards : Card[] = [];
+  actualOrder : Card[] = [];
   isOrderShown = true;
 
   ngOnInit() {
@@ -31,27 +32,29 @@ export class CardmemogameComponent {
   
   checkTheSolution(): boolean{
     for(let i = 0; i < this.actualOrder.length; i++){
-      if(this.cards[i] != this.actualOrder[i]){
-        return false;
+      if(this.cards[i].name != this.actualOrder[i].name){
+        this.cards[i].isCorrect = CorrectState.notCorrect;
+      } else {
+        this.cards[i].isCorrect = CorrectState.correct;
       }
     }
     return true;
   }
 
-  generateCardOrder(length: number): string[]{
+  generateCardOrder(length: number): Card[]{
     const allCards : string[] = [];
     for(let i = 0; i < cardSuits.suits.length; i++){
       for(let j = 0; j < cardSuits.values.length; j++){
         allCards.push(cardSuits.values[j].name + "_of_" + cardSuits.suits[i].name);
       }
     }
-    const r : string[] = [];
+    const r : Card[] = [];
     let i = 0;
     setInterval(() => {
       if(i == length)
         return;
       let n = this.getRandomInt(allCards.length);
-      r.push(allCards[n]);
+      r.push(new Card(allCards[n]));
       allCards.splice(n, 1);
       i++;
     }, 30);
