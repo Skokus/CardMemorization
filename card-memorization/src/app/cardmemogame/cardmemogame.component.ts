@@ -21,7 +21,6 @@ export class CardmemogameComponent {
   }
 
   onCardNumberSubmit(event: any) {
-    console.log("lma");
     event.preventDefault();
     this.actualOrder = this.generateCardOrder(event.target.cardnumber.value);
   }

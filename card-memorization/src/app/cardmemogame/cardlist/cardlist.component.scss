@@ -1,5 +1,13 @@
+@keyframes example {
+  from {transform: translate(0, 500px);}
+  to {transform: translate(0, 0);}
+}
+
 .cardlist{
   text-align: center;
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .cardimage{
@@ -7,4 +15,10 @@
   padding: 8px;
   width: 150px;
   height: auto;
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+.nextCard{
+  margin-left: -120px;
 }
