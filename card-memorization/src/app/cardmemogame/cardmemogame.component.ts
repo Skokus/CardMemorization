@@ -46,11 +46,15 @@ export class CardmemogameComponent {
       }
     }
     const r : string[] = [];
-    for(let i = 0; i < length; i++){
+    let i = 0;
+    setInterval(() => {
+      if(i == length)
+        return;
       let n = this.getRandomInt(allCards.length);
       r.push(allCards[n]);
       allCards.splice(n, 1);
-    }
+      i++;
+    }, 30);
     return r;
   }
 
