@@ -6,7 +6,7 @@
  </form>
 </div>
 <div *ngIf="isOrderShown">
-  <carddeck [cards]="actualOrder"></carddeck>
+  <cardlist [cards]="actualOrder"></cardlist>
 </div>
 <div *ngIf="!isOrderShown">
   <cardlist [cards]="cards"></cardlist>

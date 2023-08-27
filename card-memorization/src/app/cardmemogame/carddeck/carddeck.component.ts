@@ -11,8 +11,7 @@ export class CarddeckComponent {
   n : number = 0;
 
   onNextButtonClicked(){
-    this.n++;
-    console.log(this.cards);
+
   }
 
   getCardPath(name: string): string{
