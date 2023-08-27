@@ -7,13 +7,15 @@ import { CardmemogameComponent } from './cardmemogame/cardmemogame.component';
 import { CardinputComponent } from './cardmemogame/cardinput/cardinput.component';
 import { CardlistComponent } from './cardmemogame/cardlist/cardlist.component';
 import { FormsModule } from '@angular/forms';
+import { CarddeckComponent } from './cardmemogame/carddeck/carddeck.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardmemogameComponent,
     CardinputComponent,
-    CardlistComponent
+    CardlistComponent,
+    CarddeckComponent
   ],
   imports: [
     BrowserModule,

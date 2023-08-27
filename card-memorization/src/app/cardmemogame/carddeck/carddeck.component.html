@@ -1,0 +1,4 @@
+<div class="carddeck">
+  <button (click)="onNextButtonClicked()">Next</button>
+  <img *ngFor="let card of cards.slice().reverse(); let i = index" class="cardimage" [ngClass]="i >= cards.length - n ? 'leftcard' : 'rightcard'" [src]="getCardPath(card.name)">
+</div>

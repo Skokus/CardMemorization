@@ -1,0 +1,23 @@
+.carddeck{
+  position: relative;
+  text-align: center;
+}
+
+.cardimage{
+  position: absolute;
+  top: 20px; left: 50%;
+  padding: 8px;
+  width: 150px;
+  height: auto;
+  animation-name: example;
+  animation-duration: 1s;
+  transition: transform 1s;
+}
+
+.leftcard{
+  transform: translateX(-100px);
+}
+
+.rightcard{
+  transform: translateX(100px);
+}
