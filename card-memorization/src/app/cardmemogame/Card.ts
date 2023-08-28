@@ -3,12 +3,12 @@ export class Card{
   isCorrect: CorrectState;
   constructor(name: string){
     this.name = name;
-    this.isCorrect = CorrectState.none;
+    this.isCorrect = CorrectState.NONE;
   }
 }
 
 export enum CorrectState{
-  "none",
-  "correct",
-  "notCorrect"
+  NONE = "none",
+  CORRECT = "correct",
+  NOTCORRECT = "notCorrect"
 }

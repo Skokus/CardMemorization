@@ -18,7 +18,7 @@ export class CardmemogameComponent {
   }
 
   onCheckButtonClick(): void{
-    //TODO
+    this.checkTheSolution();
   }
 
   onCardNumberSubmit(event: any) {
@@ -31,13 +31,17 @@ export class CardmemogameComponent {
   }
   
   checkTheSolution(): boolean{
-    for(let i = 0; i < this.actualOrder.length; i++){
+    let i = 0;
+    setInterval(() => {
+      if(i == this.actualOrder.length)
+        return;
       if(this.cards[i].name != this.actualOrder[i].name){
-        this.cards[i].isCorrect = CorrectState.notCorrect;
+        this.cards[i].isCorrect = CorrectState.NOTCORRECT;
       } else {
-        this.cards[i].isCorrect = CorrectState.correct;
+        this.cards[i].isCorrect = CorrectState.CORRECT;
       }
-    }
+      i++;
+    }, 100);
     return true;
   }
 
