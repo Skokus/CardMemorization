@@ -30,7 +30,8 @@ export class CardmemogameComponent {
     this.isOrderShown = !this.isOrderShown;
   }
   
-  checkTheSolution(): boolean{
+  checkTheSolution(): number{
+    let sum = 0;
     let i = 0;
     setInterval(() => {
       if(i == this.actualOrder.length)
@@ -39,10 +40,11 @@ export class CardmemogameComponent {
         this.cards[i].isCorrect = CorrectState.NOTCORRECT;
       } else {
         this.cards[i].isCorrect = CorrectState.CORRECT;
+        sum++;
       }
       i++;
     }, 100);
-    return true;
+    return sum;
   }
 
   generateCardOrder(length: number): Card[]{
